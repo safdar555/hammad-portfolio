@@ -2,133 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Safdar Ejaz | Portfolio</title>
+  <title>Hammad Irfan | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
 <header>
   <nav class="navbar">
     <h2 class="logo">Portfolio</h2>
-    <ul class="menu">
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <ul class="menu" id="menu">
       <li><a href="#hero">Home</a></li>
-      <li><a href="#academic">Academic Record</a></li>
+      <li><a href="#academic">Academic</a></li>
       <li><a href="#cv">CV</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
     <button id="themeToggle">🌙</button>
-    </nav>
+  </nav>
 </header>
 
-
-<!-- ===== MAIN CONTENT ===== -->
-
-
 <!-- HERO -->
-<section id="hero" class="hero">
-  <div class="hero-content fade-in">
-    <h1>Hi, I'm <span>Hammad Irfan</span></h1>
-    <p>
-      Software Engineering Student <br>
-      Registration No 5124761 <br> 
-      Front-End Web Developer
-    </p>
+<section id="hero" class="hero reveal">
+  <div>
+    <h1>Hi, I'm <span class="typing-name"></span></h1>
+    <p class="typing-role"></p>
   </div>
 
-  <div class="hero-image slide-in">
-    <img src="portfolio.png" alt="Profile">
-  </div>
+  <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39" alt="profile">
 </section>
 
-<div class="space"></div>
-
 <!-- ACADEMIC -->
-<section id="academic" class="section glass">
+<section id="academic" class="section reveal">
   <h2>Academic Background</h2>
-  <input type="text" id="search" placeholder="Search qualification...">
+  <input type="text" id="search" placeholder="Search...">
 
-  <table id="academicTable">
+  <table>
     <thead>
       <tr>
-        <th onclick="sortTable(0)">Level</th>
-        <th onclick="sortTable(1)">Institute</th>
-        <th onclick="sortTable(1)">Obtain Marks</th>
-        <th onclick="sortTable(1)">Total Marks</th>
-        <th onclick="sortTable(2)">Year</th>
+        <th>Level</th>
+        <th>Institute</th>
+        <th>Marks</th>
+        <th>Total</th>
+        <th>Year</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Matric</td>
-        <td>peace School Oghi</td>
+        <td>Peace School</td>
         <td>882</td>
         <td>1100</td>
         <td>2023</td>
       </tr>
       <tr>
         <td>Intermediate</td>
-        <td>Noor School and College Mansehra</td>
+        <td>Noor College</td>
         <td>1048</td>
         <td>1200</td>
         <td>2025</td>
-      </tr>
-      <tr>
-        <td>BS Software Engineering</td>
-        <td>UET Abbottabad</td>
-        <td></td>
-        <td></td>
-        <td>2025–Present</td>
       </tr>
     </tbody>
   </table>
 </section>
 
 <!-- CV -->
-<section id="cv" class="section glass">
+<section id="cv" class="section reveal">
   <h2>Curriculum Vitae</h2>
-  <button class="btn" onclick="loadCV()">View CV</button>
-  <iframe id="cvViewer"></iframe>
+
+  <div class="cv-controls">
+    <button onclick="zoomIn()">+</button>
+    <button onclick="zoomOut()">−</button>
+    <button onclick="resetZoom()">Reset</button>
+    <a href="cv.pdf" download class="btn">Download CV</a>
+  </div>
+
+  <iframe id="cvViewer" src="cv.pdf"></iframe>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" class="section glass">
+<section id="gallery" class="section reveal">
   <h2>Gallery</h2>
   <div class="carousel">
-    <button onclick="prev()">❮</button>
-    <img id="slider" src="portfolio.png" alt="Gallery Image">
-    <img id="slider" src="portfolio.png" alt="Gallery Image">
-    <img id="slider" src="portfolio.png" alt="Gallery Image">
-
-    <button onclick="next()">❯</button>
+    <img id="slider" alt="gallery image">
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section glass">
-  <h2>Contact Me</h2>
+<section id="contact" class="section reveal">
+  <h2 class="center">Contact Me</h2>
   <form id="contactForm">
-    <input type="text" id="name" placeholder="Your Name">
-    <input type="email" id="email" placeholder="Your Email">
-    <textarea id="message" placeholder="Your Message"></textarea>
-    <button class="btn">Send</button>
-    <p id="error"></p>
+    <div class="inputGroup">
+  <input type="text" id="name" required>
+  <label for="name">Your Name</label>
+</div>
+
+<div class="inputGroup">
+  <input type="email" id="email" required>
+  <label for="email">Your Email</label>
+</div>
+
+<div class="inputGroup">
+  <textarea id="message" rows="5" required></textarea>
+  <label for="message">Message</label>
+</div>
+
+    <button type="submit" class="btn">Send</button>
+    <p id="formMessage"></p>
   </form>
 </section>
 
+
+
+
 <footer>
-  <p>© 2025 Hammad Irfan |  All right reserved</p>
+  <p>© 2025 Hammad Irfan | All Rights Reserved</p>
 </footer>
-
-
 
 <script src="script.js"></script>
 </body>
 </html>
-
